@@ -7,11 +7,19 @@ module ActiveModel
       self.save
       self
     end
+    alias_method :saved, :save_it
+
+    def update_it *args
+      self.update *args
+      self
+    end
+    alias_method :updated_with, :update_it
 
     def destroy_it
       self.destroy
       self
     end
+    alias_method :destroyed, :destroy_it
 
     def self.configure_for clazz
       [:state_tracking, :shaz].each do |name|
