@@ -31,11 +31,9 @@ end
 
 
 if defined? Mongoid
-  ActiveMode::Shaz.configure_for Mongoid::Document
+  ActiveModel::Shaz.configure_for Mongoid::Document
 end
 
-if defined?(ActiveRecord) && defined?(ActiveRecord::Base) 
-  ActiveMode::Shaz.configure_for ActiveRecord::Base
+if defined?(ActiveRecord) && defined?(ActiveRecord::Base)
+  ActiveModel::Shaz.configure_for ActiveRecord::Base
 end
-
-
